@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["mail@prashanthr.net"]
   spec.summary       = %q{Essential interaction with ESXI}
   spec.description   = %q{A simple gem written to solve only once purpose - Interact with ESXI}
-  spec.homepage      = "http://prashanthr.net/blog/2014/09/08/esxi_ruby/"
+  spec.homepage      = "http://github.com/prashanthrajagopal/esxi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
