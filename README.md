@@ -18,13 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-`require 'esxi'`
+    `require 'esxi'`
+    `esxi = VM.new({"host"=>"#{IP}", "user"=>"#{USER}", "password"=>"#{PASSWORD}", "port"=>"22"})`
+    `esxi.get_snapshots 1`
+    `esxi.create 1 name description`
 
-`esxi = VM.new({"host"=>"#{IP}", "user"=>"#{USER}", "password"=>"#{PASSWORD}", "port"=>"22"})`
+Not tested extensively yet. 
 
-`esxi.get_snapshots 1`
+## TODO
 
-`esxi.create 1 name description`
+Write est Cases.
 
 ## Contributing
 
