@@ -2,8 +2,6 @@
 
 A simple gem written to solve only once purpose - Interact with ESXI
 
-THIS IS NOT FULLY FUNCTIONAL YET. DO NOT TRY TO IMPLEMENT IT
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-DO NOT USE NOW.
+`require 'esxi'`
+
+`esxi = VM.new({"host"=>"#{IP}", "user"=>"#{USER}", "password"=>"#{PASSWORD}", "port"=>"22"})`
+
+`esxi.get_snapshots 1`
+
+`esxi.create 1 name description`
 
 ## Contributing
 

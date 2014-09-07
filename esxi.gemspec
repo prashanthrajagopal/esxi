@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Esxi::VERSION
   spec.authors       = ["Prashanth Rajagopal"]
   spec.email         = ["mail@prashanthr.net"]
-  spec.summary       = %q{A simple gem written to solve only once purpose - Interact with ESXI}
+  spec.summary       = %q{Essential interaction with ESXI}
   spec.description   = %q{A simple gem written to solve only once purpose - Interact with ESXI}
   spec.homepage      = ""
   spec.license       = "MIT"
