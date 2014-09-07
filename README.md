@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/esxi.svg)](http://badge.fury.io/rb/esxi)
+
 # Esxi
 
 A simple gem written to solve only once purpose - Interact with ESXI
