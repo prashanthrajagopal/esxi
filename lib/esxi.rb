@@ -1,51 +1,44 @@
 require "esxi/version"
 require "util"
 
-module Esxi
-  def initializer config
+class VM
+  def initialize config
     unless config['host'] then raise ArgumentError, "Must provide a hostname" end
     unless config['user'] then raise ArgumentError, "Must provide a username" end
     
-    @host = config['host']
-    @user = config['user']
-    @password = config['password'] if config['password']
-    @port = config['port'] ? config['port'] : 22
+    @host = config["host"]
+    @user = config["user"]
+    @password = config["password"] if config["password"]
+    @port = config["port"] ? config["port"] : 22
 
-    @session = Util.start_ssh_session({:host => @host, :port => @port, :user => @user, :password => password, :retries => 5, :timeout => 15})
+    @session = Util.start_ssh_session({:host => @host, :port => @port, :user => @user, :password => @password, :retries => 5, :timeout => 75})
   end
 
   def start vmid
-    unless @vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.on #{vmid}")
   end
 
   def stop vmid
-    unless vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.off #{vmid}")
   end
 
   def suspend vmid
-    unless vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.suspend #{vmid}")
   end
 
   def pause vmid
-    unless vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.suspend #{vmid}")
   end
 
   def resume vmid
-    unless vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.suspendResume #{vmid}")
   end
 
   def reset vmid
-    unless vmid then raise ArgumentError, "I need a VMID." end
     Util.run(@session, "vim-cmd vmsvc/power.reset #{vmid}")
   end
 
   def create_snapshot vmid, name, description
-    unless vmid then raise ArgumentError, "I need a VMID." end
     description ||= "Snapshot created by https://github.com/prashanthrajagopal/esxi"
     Util.run(@session, "vim-cmd vmsvc/snapshot.create #{vmid} #{name} #{description} 1 0")
   end
@@ -91,15 +84,15 @@ module Esxi
       end
       snapshot_list << info unless info == {}
     end
-
+    snapshot_list
   end
 
   def delete_all_snapshots vmid
     Util.run(@session, "vim-cmd vmsvc/snapshot.removeall #{vmid}")
   end
 
-  def running?
-    if Util.run(@session, "vim-cmd vmsvc/power.getstate #{@vmid}").match /Powered on/
+  def running? vmid
+    if Util.run(@session, "vim-cmd vmsvc/power.getstate #{vmid}").match /Powered on/
       return true
     else
       return false

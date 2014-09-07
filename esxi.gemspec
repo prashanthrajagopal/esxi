@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Esxi::VERSION
   spec.authors       = ["Prashanth Rajagopal"]
   spec.email         = ["mail@prashanthr.net"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{A simple gem written to solve only once purpose - Interact with ESXI}
+  spec.description   = %q{A simple gem written to solve only once purpose - Interact with ESXI}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -19,6 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.6"
-  spec.add_development_dependency "rake"
-  spec.add_dependency 'net/ssh'
+  spec.add_development_dependency 'rake', '~> 10.3'
+  spec.add_runtime_dependency 'net-ssh', '~> 2.7'
 end
