@@ -27,7 +27,7 @@ Not tested extensively yet.
 
 ## TODO
 
-Write est Cases.
+Write test Cases.
 
 ## Contributing
 
