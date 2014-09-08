@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/esxi@2x.png)](http://badge.fury.io/rb/esxi)
+[![Gem Version](https://badge.fury.io/rb/esxi.svg)](http://badge.fury.io/rb/esxi)
 
 # Esxi
 
