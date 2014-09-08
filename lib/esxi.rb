@@ -98,4 +98,13 @@ class VM
       return false
     end
   end 
+
+  def shutdown
+    puts "Use With Caution. This will shutdown your ESXI." 
+    puts "You have 5 seconds to abort"
+    sleep 5
+    Util.run(@session, "for id in `vim-cmd vmsvc/getallvms | grep -v Vmid |awk '{print (}'`; do vim-cmd /vmsvc/power.off $id ; done")
+    Util.run(@session, "vim-cmd hostsvc/maintenance_mode_enter")
+    Util.run(@session, 'esxcli system shutdown poweroff -d 10 -r "Shell initiated system shutdown"')
+  end
 end
