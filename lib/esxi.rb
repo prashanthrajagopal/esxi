@@ -107,4 +107,8 @@ class VM
     Util.run(@session, "vim-cmd hostsvc/maintenance_mode_enter")
     Util.run(@session, 'esxcli system shutdown poweroff -d 10 -r "Shell initiated system shutdown"')
   end
+
+  def run_command command
+    Util.run(@session, command)
+  end
 end
