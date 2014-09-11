@@ -40,7 +40,7 @@ class VM
 
   def create_snapshot vmid, name, description
     description ||= "Snapshot created by https://github.com/prashanthrajagopal/esxi"
-    Util.run(@session, "nohup vim-cmd vmsvc/snapshot.create #{vmid} #{name} #{description} 1 0 &")
+    Util.run(@session, "nohup vim-cmd vmsvc/snapshot.create #{vmid} #{name} #{description} 1 0 > nohup.log < /dev/null &")
   end
 
   def revert_snapshot vmid, snapshot_name
@@ -50,7 +50,7 @@ class VM
       if snap["name"].downcase == snapshot_name.strip.downcase
         snap_id = snap["id"]
         #puts "DEBUG: I would revert to #{snapshot}"
-        Util.run(@session, "nohup vim-cmd vmsvc/snapshot.revert #{vmid} #{snap_id} 0 &")
+        Util.run(@session, "nohup vim-cmd vmsvc/snapshot.revert #{vmid} #{snap_id} 0 > nohup.log < /dev/null &")
         return true
       end
     end
@@ -64,7 +64,7 @@ class VM
       if snap["name"].downcase == snapshot_name.strip.downcase
         snap_id = snap["id"]
         #puts "DEBUG: I would remove #{snapshot}"
-        Util.run(@session, "nohup vim-cmd vmsvc/snapshot.remove #{vmid} #{snap_id} &")
+        Util.run(@session, "nohup vim-cmd vmsvc/snapshot.remove #{vmid} #{snap_id} > nohup.log < /dev/null &")
         return true
       end
     end
@@ -88,7 +88,7 @@ class VM
   end
 
   def delete_all_snapshots vmid
-    Util.run(@session, "nohup vim-cmd vmsvc/snapshot.removeall #{vmid} &")
+    Util.run(@session, "nohup vim-cmd vmsvc/snapshot.removeall #{vmid} > nohup.log < /dev/null &")
   end
 
   def running? vmid
