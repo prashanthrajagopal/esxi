@@ -13,6 +13,10 @@ class VM
 
     @session = Util.start_ssh_session({:host => @host, :port => @port, :user => @user, :password => @password, :retries => 5, :timeout => 75})
   end
+  
+  def get_all_vms
+    Util.run(@session, "vim-cmd vmsvc/getallvms")
+  end
 
   def start vmid
     Util.run(@session, "vim-cmd vmsvc/power.on #{vmid}")
