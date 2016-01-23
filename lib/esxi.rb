@@ -17,7 +17,7 @@ class VM
   def get_all_vms
     result = Util.run(@session, "vim-cmd vmsvc/getallvms")
     vms = result.split("\n").map { |s| s.gsub(/\s+/,' ') }.split(" ")
-    mappings = lines.shift
+    mappings = vms.shift
     vms.collect { |vm| mappings.zip(vm).to_h }
   end
 
