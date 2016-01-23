@@ -15,7 +15,25 @@ class VM
   end
   
   def get_all_vms
-    Util.run(@session, "vim-cmd vmsvc/getallvms")
+    result = Util.run(@session, "vim-cmd vmsvc/getallvms")
+    vms = result.split("\n").map { |s| s.gsub(/\s+/,' ') }.split(" ")
+    mappings = lines.shift
+    vms.collect { |vm| mappings.zip(vm).to_h }
+  end
+
+  def memory_information
+    result = Util.run(@session, "esxcli hardware memory get")
+    values = result.split("\n").map(&:strip).map { |s| s.split(": ") }
+    values.map { |v| v.first.downcase!; v.first.gsub!(/\s+/,'_') }
+    values.to_h
+  end
+
+  def cpu_information
+    r = Util.run(@session, "esxcli hardware cpu list")
+    r = r.split("\n").map(&:strip).map { |s| s.split(": ") }.reject(&:blank?)
+    r.map { |v| v.first.downcase!; v.first.gsub!(/\s+/,'_') }
+    result = r.split { |a| a.first.start_with?("cpu") }
+    result.reject(&:blank?).map(&:to_h)
   end
 
   def start vmid
