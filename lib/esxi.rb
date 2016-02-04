@@ -43,6 +43,10 @@ class VM
   def stop vmid
     Util.run(@session, "vim-cmd vmsvc/power.off #{vmid}")
   end
+  
+  def shutdown vmid
+    Util.run(@session, "vim-cmd vmsvc/power.shutdown #{vmid}")
+  end
 
   def suspend vmid
     Util.run(@session, "vim-cmd vmsvc/power.suspend #{vmid}")
