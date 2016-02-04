@@ -125,7 +125,7 @@ class VM
     end
   end 
 
-  def shutdown
+  def shutdown_host
     puts "Use With Caution. This will shutdown your ESXI." 
     puts "You have 5 seconds to abort"
     sleep 5
