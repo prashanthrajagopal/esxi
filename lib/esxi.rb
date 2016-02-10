@@ -1,6 +1,7 @@
 require "esxi/version"
 require "util"
 require "vm_info"
+require "json"
 
 class VM
   include VMInfo
