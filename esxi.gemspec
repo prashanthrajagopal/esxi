@@ -20,5 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency 'rake', '~> 10.3'
+  spec.add_development_dependency 'minitest', '~> 5.8.4'
+  spec.add_development_dependency 'mocha', '~> 1.1.0'
   spec.add_runtime_dependency 'net-ssh', '~> 2.7'
 end
