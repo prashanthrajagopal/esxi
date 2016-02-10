@@ -14,7 +14,7 @@ class VM
     @session = Util.start_ssh_session({:host => @host, :port => @port, :user => @user, :password => @password, :retries => 5, :timeout => 75})
   end
   
-  def get_all_vms
+  def all_vms
     result = Util.run(@session, "vim-cmd vmsvc/getallvms")
     vms = result.split("\n").map { |s| s.gsub(/\s+/,' ') }.map { |s| s.split(" ") }
     mappings = vms.shift.map(&:downcase)
