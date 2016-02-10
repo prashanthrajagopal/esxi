@@ -1,7 +1,10 @@
 require "esxi/version"
 require "util"
+require "vm_info"
 
 class VM
+  include VMInfo
+
   def initialize config
     unless config['host'] then raise ArgumentError, "Must provide a hostname" end
     unless config['user'] then raise ArgumentError, "Must provide a username" end
