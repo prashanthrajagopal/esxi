@@ -5,6 +5,7 @@ module VMInfo
 
     # replace the (vim.vm.Description) kind of stuff
     raw_info = raw_info.gsub(/\(vim.*\)/, "")
+    raw_info = raw_info.gsub(/\(vmodl.*\)/, "")
 
     # replace the equals sign with a colon
     raw_info = raw_info.tr("=", ":")
@@ -17,6 +18,9 @@ module VMInfo
 
     # replace single quotes with double quotes for values
     raw_info = raw_info.gsub(/'(.*)'/, '"\1"')
+
+    # replace nested quotes e.g. "string "string"" becomes "string 'string'"
+    raw_info = raw_info.gsub(/\"(\w)\"\"/,'\'\1\'"')
 
     # remove (string) before string arrays
     raw_info = raw_info.gsub(/\(string\)/, "")

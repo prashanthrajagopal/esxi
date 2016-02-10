@@ -8,6 +8,16 @@ class VMInfoTest < BaseUnitTest
     @raw_guest_info = fixture('guest_info', 'txt')
   end
 
+  def test_parsing_errors
+    error = """(vim.fault.NotFound) {
+      faultCause = (vmodl.MethodFault) null, 
+      msg = \"Unable to find a VM corresponding to \"5\"\"
+    }"""
+    vm_summary = vm_info_to_hash(error)
+    expected_response = { "faultCause" => nil, "msg" => "Unable to find a VM corresponding to '5'" }
+    assert_equal expected_response, vm_summary
+  end
+
   def test_hash_vm_info
     vm_summary = vm_info_to_hash(@raw_summary)
 
