@@ -1,0 +1,87 @@
+Guest information:
+
+(vim.vm.GuestInfo) {
+   toolsStatus = "toolsOk",
+   toolsVersionStatus = "guestToolsCurrent",
+   toolsVersionStatus2 = "guestToolsCurrent",
+   toolsRunningStatus = "guestToolsRunning",
+   toolsVersion = "10241",
+   toolsUpdateStatus = (vim.vm.GuestInfo.ToolsUpdateStatus) null,
+   guestId = "darwin14_64Guest",
+   guestFamily = "otherGuestFamily",
+   guestFullName = "Apple Mac OS X 10.10 (64-bit)",
+   hostName = "my host",
+   ipAddress = "127.0.0.0",
+   net = (vim.vm.GuestInfo.NicInfo) [
+      (vim.vm.GuestInfo.NicInfo) {
+         network = "VM Network",
+         ipAddress = (string) [
+            "127.0.0.0",
+            "f27e::2fc:49fe:fd9f:9300"
+         ],
+         macAddress = "00:1c:06:e3:93:22",
+         connected = true,
+         deviceConfigId = 4000,
+         dnsConfig = (vim.net.DnsConfigInfo) null,
+         ipConfig = (vim.net.IpConfigInfo) {
+            ipAddress = (vim.net.IpConfigInfo.IpAddress) [
+               (vim.net.IpConfigInfo.IpAddress) {
+                  ipAddress = "127.0.0.0",
+                  prefixLength = 20,
+                  origin = <unset>,
+                  state = "preferred",
+                  lifetime = <unset>
+               },
+               (vim.net.IpConfigInfo.IpAddress) {
+                  ipAddress = "f27e::2fc:49fe:fd9f:9300",
+                  prefixLength = 64,
+                  origin = <unset>,
+                  state = "unknown",
+                  lifetime = <unset>
+               }
+            ],
+            dhcp = (vim.net.DhcpConfigInfo) null,
+            autoConfigurationEnabled = <unset>
+         },
+         netBIOSConfig = (vim.net.NetBIOSConfigInfo) null
+      }
+   ],
+   ipStack = (vim.vm.GuestInfo.StackInfo) [
+      (vim.vm.GuestInfo.StackInfo) {
+         dnsConfig = (vim.net.DnsConfigInfo) {
+            dhcp = false,
+            hostName = "my host",
+            domainName = "my.domain.com",
+            ipAddress = (string) [
+               "127.0.0.0",
+               "127.0.0.0"
+            ],
+            searchDomain = (string) [
+               "my.domain.com"
+            ]
+         },
+         ipRouteConfig = (vim.net.IpRouteConfigInfo) {
+         },
+         dhcpConfig = (vim.net.DhcpConfigInfo) null,
+      }
+   ],
+   disk = (vim.vm.GuestInfo.DiskInfo) [
+      (vim.vm.GuestInfo.DiskInfo) {
+         diskPath = "/",
+         capacity = 42089914368,
+         freeSpace = 9339428864
+      }
+   ],
+   screen = (vim.vm.GuestInfo.ScreenInfo) {
+      width = 1024,
+      height = 768
+   },
+   guestState = "running",
+   powerPolicy = (vim.vm.PowerPolicy) null,
+   appHeartbeatStatus = "appStatusGray",
+   guestKernelCrashed = <unset>,
+   appState = "none",
+   guestOperationsReady = true,
+   interactiveGuestOperationsReady = true,
+   guestStateChangeSupported = true,
+}
