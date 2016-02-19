@@ -1,0 +1,247 @@
+Listsummary:
+
+(vim.vm.Summary) {
+   vm = 'vim.VirtualMachine:2',
+   runtime = (vim.vm.RuntimeInfo) {
+      device = (vim.vm.DeviceRuntimeInfo) [
+         (vim.vm.DeviceRuntimeInfo) {
+            runtimeState = (vim.vm.DeviceRuntimeInfo.VirtualEthernetCardRuntimeState) {
+               vmDirectPathGen2Active = false,
+               vmDirectPathGen2InactiveReasonOther = (string) [
+                  "vmNptIncompatibleNetwork"
+               ],
+               vmDirectPathGen2InactiveReasonExtended = <unset>,
+               reservationStatus = <unset>,
+            },
+            key = 4000
+         }
+      ],
+      host = 'vim.HostSystem:ha-host',
+      connectionState = "connected",
+      powerState = "poweredOn",
+      faultToleranceState = "notConfigured",
+      dasVmProtection = (vim.vm.RuntimeInfo.DasProtectionState) null,
+      toolsInstallerMounted = false,
+      suspendTime = <unset>,
+      bootTime = "2016-02-02T18:47:51.324488Z",
+      suspendInterval = 0,
+      question = (vim.vm.QuestionInfo) null,
+      memoryOverhead = <unset>,
+      maxCpuUsage = 4589,
+      maxMemoryUsage = 6172,
+      numMksConnections = 0,
+      recordReplayState = "inactive",
+      cleanPowerOff = <unset>,
+      needSecondaryReason = <unset>,
+      onlineStandby = false,
+      minRequiredEVCModeKey = <unset>,
+      consolidationNeeded = false,
+      offlineFeatureRequirement = (vim.vm.FeatureRequirement) [
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.lm",
+            featureName = "cpuid.lm",
+            value = "Bool:Min:1"
+         }
+      ],
+      featureRequirement = (vim.vm.FeatureRequirement) [
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SSE3",
+            featureName = "cpuid.SSE3",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.PCLMULQDQ",
+            featureName = "cpuid.PCLMULQDQ",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.MWAIT",
+            featureName = "cpuid.MWAIT",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SSSE3",
+            featureName = "cpuid.SSSE3",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.CMPXCHG16B",
+            featureName = "cpuid.CMPXCHG16B",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.PCID",
+            featureName = "cpuid.PCID",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SSE41",
+            featureName = "cpuid.SSE41",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SSE42",
+            featureName = "cpuid.SSE42",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.POPCNT",
+            featureName = "cpuid.POPCNT",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.AES",
+            featureName = "cpuid.AES",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.XSAVE",
+            featureName = "cpuid.XSAVE",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.AVX",
+            featureName = "cpuid.AVX",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.F16C",
+            featureName = "cpuid.F16C",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.RDRAND",
+            featureName = "cpuid.RDRAND",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.DS",
+            featureName = "cpuid.DS",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SS",
+            featureName = "cpuid.SS",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.FSGSBASE",
+            featureName = "cpuid.FSGSBASE",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.SMEP",
+            featureName = "cpuid.SMEP",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.ENFSTRG",
+            featureName = "cpuid.ENFSTRG",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.XCR0_MASTER_SSE",
+            featureName = "cpuid.XCR0_MASTER_SSE",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.XCR0_MASTER_YMM_H",
+            featureName = "cpuid.XCR0_MASTER_YMM_H",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.LAHF64",
+            featureName = "cpuid.LAHF64",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.NX",
+            featureName = "cpuid.NX",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.RDTSCP",
+            featureName = "cpuid.RDTSCP",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.LM",
+            featureName = "cpuid.LM",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "cpuid.Intel",
+            featureName = "cpuid.Intel",
+            value = "Bool:Min:1"
+         },
+         (vim.vm.FeatureRequirement) {
+            key = "misc.cpuidFaulting",
+            featureName = "misc.cpuidFaulting",
+            value = "Bool:Min:1"
+         }
+      ],
+      vFlashCacheAllocation = 0,
+      paused = false,
+      snapshotInBackground = false,
+      quiescedForkParent = <unset>,
+   },
+   guest = (vim.vm.Summary.GuestSummary) {
+      guestId = "darwin14_64Guest",
+      guestFullName = "Apple Mac OS X 10.10 (64-bit)",
+      toolsStatus = "toolsOk",
+      toolsVersionStatus = "guestToolsCurrent",
+      toolsVersionStatus2 = "guestToolsCurrent",
+      toolsRunningStatus = "guestToolsRunning",
+      hostName = "my host",
+      ipAddress = "127.0.0.0",
+   },
+   config = (vim.vm.Summary.ConfigSummary) {
+      name = "my-host-clone",
+      template = false,
+      vmPathName = "[datastore1] my-host-clone/my-host-clone.vmx",
+      memorySizeMB = 6172,
+      cpuReservation = 0,
+      memoryReservation = 0,
+      numCpu = 2,
+      numEthernetCards = 1,
+      numVirtualDisks = 1,
+      uuid = "564d9cca-b0f7-63f5-9d02-d54aa8feb3f2",
+      instanceUuid = "",
+      guestId = "darwin14_64Guest",
+      guestFullName = "Apple Mac OS X 10.10 (64-bit)",
+      annotation = "",
+      product = (vim.vApp.ProductInfo) null,
+      installBootRequired = <unset>,
+      ftInfo = (vim.vm.FaultToleranceConfigInfo) null,
+      managedBy = (vim.ext.ManagedByInfo) null
+   },
+   storage = (vim.vm.Summary.StorageSummary) {
+      committed = 48398279505,
+      uncommitted = 1195377182,
+      unshared = 48398279505,
+      timestamp = "2016-01-28T14:54:26.017343Z"
+   },
+   quickStats = (vim.vm.Summary.QuickStats) {
+      overallCpuUsage = 5940,
+      overallCpuDemand = <unset>,
+      guestMemoryUsage = 1049,
+      hostMemoryUsage = 6190,
+      guestHeartbeatStatus = "green",
+      distributedCpuEntitlement = <unset>,
+      distributedMemoryEntitlement = <unset>,
+      staticCpuEntitlement = <unset>,
+      staticMemoryEntitlement = <unset>,
+      privateMemory = 6144,
+      sharedMemory = 0,
+      swappedMemory = 0,
+      balloonedMemory = 0,
+      consumedOverheadMemory = 46,
+      ftLogBandwidth = <unset>,
+      ftSecondaryLatency = <unset>,
+      ftLatencyStatus = <unset>,
+      compressedMemory = 0,
+      uptimeSeconds = 13308,
+      ssdSwappedMemory = <unset>
+   },
+   overallStatus = "green",
+}
