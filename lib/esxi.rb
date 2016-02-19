@@ -78,6 +78,10 @@ class VM
     Util.run(@session, "vim-cmd vmsvc/power.reset #{vmid}")
   end
 
+  def destroy vmid
+    Util.run(@session, "vim-cmd vmsvc/destroy #{vmid}")
+  end
+
   def create_snapshot vmid, name, description
     description ||= "Snapshot created by https://github.com/prashanthrajagopal/esxi"
     Util.run(@session, "nohup vim-cmd vmsvc/snapshot.create #{vmid} #{name} #{description} 1 0 > nohup.log < /dev/null &")
